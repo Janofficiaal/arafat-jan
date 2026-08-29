@@ -8,6 +8,7 @@ const navLinks = [
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Real Estate 🏠', href: '/real-estate' },
   { name: 'UGC Ads 📱', href: '/ugc-ads' },
+  { name: 'Blog ✍️', href: '/blog' },
   { name: 'Skills', href: '#skills' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'Contact', href: '#contact' },

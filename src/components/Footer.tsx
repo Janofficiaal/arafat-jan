@@ -35,11 +35,12 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2 text-sm text-white/80">
               <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
+              <li><a href="/blog" className="hover:text-white font-bold text-green-200 transition-colors">Blog & Insights ✍️</a></li>
+              <li><a href="/ugc-ads" className="hover:text-white transition-colors">UGC Ads Page 📱</a></li>
+              <li><a href="/real-estate" className="hover:text-white transition-colors">Real Estate Media 🏠</a></li>
               <li><a href="#about" className="hover:text-white transition-colors">About Me</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
               <li><a href="#portfolio" className="hover:text-white transition-colors">Featured Projects</a></li>
-              <li><a href="#skills" className="hover:text-white transition-colors">Skills & Stack</a></li>
-              <li><a href="#testimonials" className="hover:text-white transition-colors">Client Testimonials</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
