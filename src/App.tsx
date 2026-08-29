@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import MainLandingPage from './pages/MainLandingPage';
 import RealEstatePage from './pages/RealEstatePage';
+import UgcAdsPage from './pages/UgcAdsPage';
 
 // Helper component to handle both pathname and hash routes seamlessly
 const AppRoutes = () => {
@@ -12,11 +13,18 @@ const AppRoutes = () => {
     return <RealEstatePage />;
   }
 
+  // If user navigates via hash like #/ugc-ads or #/ugc
+  if (hash === '#/ugc-ads' || hash === '#/ugc' || hash === '#ugc-ads' || hash === '#ugc') {
+    return <UgcAdsPage />;
+  }
+
   return (
     <Routes>
       <Route path="/" element={<MainLandingPage />} />
       <Route path="/real-estate" element={<RealEstatePage />} />
       <Route path="/realstate" element={<RealEstatePage />} />
+      <Route path="/ugc-ads" element={<UgcAdsPage />} />
+      <Route path="/ugc" element={<UgcAdsPage />} />
       {/* Fallback to main landing page */}
       <Route path="*" element={<MainLandingPage />} />
     </Routes>

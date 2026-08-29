@@ -6,10 +6,21 @@ import {
   TrendingUp, 
   Palette, 
   Bot, 
-  CheckCircle2 
+  CheckCircle2,
+  Sparkles
 } from 'lucide-react';
 
 const skillCategories = [
+  {
+    title: 'UGC & High-Converting Video Ads',
+    icon: Sparkles,
+    skills: [
+      { name: 'TikTok, Reels & Shorts UGC Ad Editing', level: 96 },
+      { name: 'Scroll-Stopping Hook Scripting & Pacing', level: 95 },
+      { name: 'DTC Product Showcase & Lifestyle Ads', level: 94 },
+      { name: 'A/B Creative Variations & ROAS Scaling', level: 92 },
+    ],
+  },
   {
     title: 'Video Editing & Motion Post-Production',
     icon: Video,

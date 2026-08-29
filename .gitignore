@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw asset source folders (anchored to root only)
+/UGC/
+/realstate/
+

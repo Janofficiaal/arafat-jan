@@ -2,6 +2,7 @@ import FadeIn from './FadeIn';
 import { MessageCircle, ArrowRight, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const coreSkills = [
+  'UGC Video Ads & Creatives',
   'Video Editing & Motion',
   'Ethical Hacking & Cyber Security',
   'Digital Marketing & Ads',

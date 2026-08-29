@@ -4,6 +4,7 @@ import { MessageCircle, Play, Eye } from 'lucide-react';
 
 const categories = [
   'All',
+  'UGC Video Ads',
   'Video Editing',
   'Web Design',
   'Graphics Design',
@@ -13,10 +14,30 @@ const categories = [
 
 const projectsData = [
   {
+    title: 'High-Converting TikTok & Meta UGC Ad Creative',
+    category: 'UGC Video Ads',
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop&q=80',
+    fallback: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80',
+    desc: 'Scroll-stopping UGC ad creative engineered with hook scripting, kinetic typography, dynamic pacing, and platform optimization for DTC brands.',
+    tags: ['TikTok Spark Ads', 'Meta Reels', 'UGC Editing', 'Hook Scripting'],
+    linkText: 'Explore UGC Ads Page 📱',
+    customLink: '/ugc-ads',
+  },
+  {
+    title: 'Luxury Real Estate Video Tours & Faceless AI Media',
+    category: 'Video Editing',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80',
+    fallback: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80',
+    desc: 'High-converting listing cinematic reels, luxury walkthroughs, and faceless AI market updates designed for top-producing real estate agents & brokerages.',
+    tags: ['Luxury Walkthroughs', 'AI Faceless Reels', 'Real Estate Media'],
+    linkText: 'Explore Real Estate Page 🏠',
+    customLink: '/real-estate',
+  },
+  {
     title: 'E-Commerce Brand High-Converting Video Ad',
     category: 'Video Editing',
-    image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format&fit=crop&q=80',
-    fallback: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&auto=format&fit=crop&q=80',
+    fallback: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format&fit=crop&q=80',
     desc: 'Dynamic commercial video with cinematic transitions, custom sound FX, and color grading for a premier DTC fashion brand.',
     tags: ['Premiere Pro', 'After Effects', 'Sound Design', 'Color Grading'],
     linkText: 'Order Similar Video Ad',
@@ -166,16 +187,26 @@ const ProjectsSection = () => {
                     ))}
                   </div>
 
-                  {/* WhatsApp Action Button */}
-                  <a
-                    href={`https://wa.me/8801930537776?text=Hi%20Arafat%20Jan,%20I%20saw%20your%20project:%20${encodeURIComponent(proj.title)}%20and%20want%20to%20hire%20you%20for%20similar%20work.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-lg border-2 border-[#0d7a3a] text-[#0d7a3a] group-hover:bg-[#0d7a3a] group-hover:text-white font-bold text-sm transition-all duration-300"
-                  >
-                    <MessageCircle size={16} />
-                    {proj.linkText}
-                  </a>
+                  {/* Action Button (Internal Page Link or WhatsApp Inquire) */}
+                  {proj.customLink ? (
+                    <a
+                      href={proj.customLink}
+                      className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#0d7a3a] text-white hover:bg-[#0a632e] font-bold text-sm transition-all duration-300 shadow-sm"
+                    >
+                      <span>{proj.linkText}</span>
+                      <span aria-hidden="true">&rarr;</span>
+                    </a>
+                  ) : (
+                    <a
+                      href={`https://wa.me/8801930537776?text=Hi%20Arafat%20Jan,%20I%20saw%20your%20project:%20${encodeURIComponent(proj.title)}%20and%20want%20to%20hire%20you%20for%20similar%20work.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-lg border-2 border-[#0d7a3a] text-[#0d7a3a] group-hover:bg-[#0d7a3a] group-hover:text-white font-bold text-sm transition-all duration-300"
+                    >
+                      <MessageCircle size={16} />
+                      {proj.linkText}
+                    </a>
+                  )}
                 </div>
 
               </div>

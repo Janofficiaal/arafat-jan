@@ -8,12 +8,21 @@ import {
   Share2, 
   Bot, 
   ArrowUpRight,
-  MessageCircle
+  MessageCircle,
+  Sparkles
 } from 'lucide-react';
 
 const services = [
   {
     num: '01',
+    icon: Sparkles,
+    name: 'UGC & DTC Ad Creative Production',
+    sub: 'High-Converting Paid Social Ads',
+    desc: 'Scroll-stopping UGC video ads for TikTok Spark Ads, Meta Reels & YouTube Shorts. Hook-driven scripting, fast 24-48h turnaround, and A/B creative testing.',
+    features: ['TikTok, Reels & Shorts Optimized', 'Scroll-Stopping Hook Scripting', 'A/B Creative Variations & Fast 24-48h Delivery'],
+  },
+  {
+    num: '02',
     icon: Video,
     name: 'Video Editing & Motion Graphics',
     sub: 'Cinematic Post-Production',
@@ -21,7 +30,7 @@ const services = [
     features: ['YouTube & Short-form Mastery', 'Color Grading & Audio Enhancement', 'Dynamic Subtitles & Motion Graphics'],
   },
   {
-    num: '02',
+    num: '03',
     icon: ShieldAlert,
     name: 'Ethical Hacking & Cybersecurity',
     sub: 'Security & Penetration Testing',
@@ -29,7 +38,7 @@ const services = [
     features: ['Web App Penetration Testing', 'Server Hardening & Firewall Setup', 'Malware Removal & Security Audits'],
   },
   {
-    num: '03',
+    num: '04',
     icon: TrendingUp,
     name: 'Performance Digital Marketing',
     sub: 'Paid Ads & Lead Generation',
@@ -37,7 +46,7 @@ const services = [
     features: ['Meta & Google Ads Management', 'High-Converting Sales Funnels', 'Data Tracking & Pixel Optimization'],
   },
   {
-    num: '04',
+    num: '05',
     icon: Globe,
     name: 'Website Design & Development',
     sub: 'Modern UI/UX & Full-Stack',
@@ -45,7 +54,7 @@ const services = [
     features: ['High-Conversion Landing Pages', 'Custom WordPress & Modern React/Next.js', 'Speed & Technical SEO Optimized'],
   },
   {
-    num: '05',
+    num: '06',
     icon: Palette,
     name: 'Graphic Design & Brand Identity',
     sub: 'Visual Storytelling',
@@ -53,7 +62,7 @@ const services = [
     features: ['Logo & Comprehensive Brand Kit', 'High-CTR Social Ad Creatives', 'Pitch Decks & Marketing Materials'],
   },
   {
-    num: '06',
+    num: '07',
     icon: Share2,
     name: 'Social Media Growth & Marketing',
     sub: 'Organic & Paid Audience Scaling',
@@ -61,7 +70,7 @@ const services = [
     features: ['Channel Optimization & Branding', 'Content Scheduling & Strategy', 'Audience Growth & Engagement'],
   },
   {
-    num: '07',
+    num: '08',
     icon: Bot,
     name: 'Workflow & Business Automation',
     sub: 'Smart AI & Integrations',
