@@ -107,11 +107,11 @@ const BlogListPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
                 
                 {/* Featured Cover Image (5 cols) */}
-                <div className="lg:col-span-5 relative aspect-[4/3] lg:aspect-auto lg:h-full bg-gray-900">
+                <div className="lg:col-span-5 relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[380px] bg-gray-900 overflow-hidden">
                   <img
                     src={featuredPost.coverImage}
                     alt={featuredPost.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="inline-flex items-center gap-1.5 bg-[#0d7a3a] text-white text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-lg">

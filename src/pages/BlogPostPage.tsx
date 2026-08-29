@@ -85,95 +85,197 @@ const BlogPostPage = () => {
       <main className="pt-24 sm:pt-32 pb-20 flex-grow">
         
         {/* Article Header & Hero */}
-        <header className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
-          
-          {/* Breadcrumbs */}
-          <FadeIn delay={0} y={15}>
-            <nav className="flex items-center gap-2 text-xs text-gray-500 font-semibold mb-6 flex-wrap">
-              <a href="/" className="hover:text-[#0d7a3a] transition-colors">Home</a>
-              <ChevronRight size={14} />
-              <a href="/blog" className="hover:text-[#0d7a3a] transition-colors">Blog</a>
-              <ChevronRight size={14} />
-              <span className="text-gray-900 line-clamp-1">{post.category}</span>
-            </nav>
-          </FadeIn>
+        {post.slug === 'who-is-yasin-arafat-jan' ? (
+          /* Executive Editorial Hero for Biography Post */
+          <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
+            <div className="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-gray-200/90 shadow-xl relative overflow-hidden">
+              {/* Background ambient decor */}
+              <div className="absolute top-0 right-0 w-80 h-80 bg-[#0d7a3a]/5 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Category Badge & Metadata */}
-          <FadeIn delay={0.1} y={15}>
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-semibold text-gray-600 mb-4 flex-wrap">
-              <span className="bg-[#0d7a3a] text-white px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
-                {post.category}
-              </span>
-              <span className="flex items-center gap-1">
-                <Calendar size={14} className="text-gray-400" />
-                {post.publishedDate}
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1">
-                <Clock size={14} className="text-gray-400" />
-                {post.readTime}
-              </span>
-            </div>
-          </FadeIn>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+                
+                {/* Left Column: Title & Metadata (7 cols) */}
+                <div className="lg:col-span-7">
+                  {/* Breadcrumbs */}
+                  <nav className="flex items-center gap-2 text-xs text-gray-500 font-semibold mb-4 flex-wrap">
+                    <a href="/" className="hover:text-[#0d7a3a] transition-colors">Home</a>
+                    <ChevronRight size={14} />
+                    <a href="/blog" className="hover:text-[#0d7a3a] transition-colors">Blog</a>
+                    <ChevronRight size={14} />
+                    <span className="text-gray-900">Biography</span>
+                  </nav>
 
-          {/* Article Title */}
-          <FadeIn delay={0.2} y={20}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-[1.15] mb-5">
-              {post.title}
-            </h1>
-          </FadeIn>
+                  {/* Badges */}
+                  <div className="flex items-center gap-2.5 text-xs font-bold text-gray-600 mb-4 flex-wrap">
+                    <span className="bg-[#0d7a3a] text-white px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                      {post.category}
+                    </span>
+                    <span className="bg-[#0d7a3a]/10 text-[#0d7a3a] px-3 py-1 rounded-full border border-[#0d7a3a]/20">
+                      Hackers Heaven • Sonadanga, Khulna
+                    </span>
+                  </div>
 
-          {/* Subtitle */}
-          <FadeIn delay={0.3} y={20}>
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 font-normal">
-              {post.subtitle}
-            </p>
-          </FadeIn>
+                  {/* Title */}
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight leading-[1.15] mb-4">
+                    {post.title}
+                  </h1>
 
-          {/* Author Bar & Share Button */}
-          <FadeIn delay={0.35} y={15}>
-            <div className="flex items-center justify-between py-4 border-y border-gray-200 gap-4 flex-wrap">
-              
-              <div className="flex items-center gap-3.5">
-                <img
-                  src={post.author.avatar}
-                  alt={post.author.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-[#0d7a3a]/30 shadow-sm"
-                />
-                <div>
-                  <h4 className="text-sm font-bold text-gray-900">{post.author.name}</h4>
-                  <p className="text-xs text-gray-500">{post.author.role}</p>
+                  {/* Subtitle */}
+                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 font-normal">
+                    {post.subtitle}
+                  </p>
+
+                  {/* Author Bar & Share */}
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100 gap-4 flex-wrap">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2 text-xs text-gray-500 font-semibold">
+                        <span className="flex items-center gap-1">
+                          <Calendar size={14} className="text-gray-400" />
+                          {post.publishedDate}
+                        </span>
+                        <span>•</span>
+                        <span className="flex items-center gap-1">
+                          <Clock size={14} className="text-gray-400" />
+                          {post.readTime}
+                        </span>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={handleShare}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-700 text-xs font-bold rounded-xl shadow-sm transition-all"
+                      title="Share Article"
+                    >
+                      {copied ? <Check size={14} className="text-green-600" /> : <Share2 size={14} />}
+                      <span>{copied ? 'Link Copied!' : 'Share Article'}</span>
+                    </button>
+                  </div>
                 </div>
+
+                {/* Right Column: Full Uncropped Portrait Image Card (5 cols) */}
+                <div className="lg:col-span-5 flex justify-center">
+                  <div className="relative max-w-[340px] sm:max-w-[380px] w-full">
+                    {/* Decorative border frame */}
+                    <div className="absolute -inset-3 sm:-inset-4 border-2 border-[#0d7a3a]/25 rounded-[32px] transform -rotate-1" />
+                    
+                    <div className="relative rounded-[28px] overflow-hidden shadow-2xl bg-[#0d7a3a]/5 border-4 border-white">
+                      <img
+                        src={post.coverImage}
+                        alt="Yasin Arafat Jan"
+                        className="w-full aspect-[4/5] object-cover object-center"
+                      />
+
+                      {/* Gradient Overlay bottom info */}
+                      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 text-white">
+                        <h3 className="text-xl font-bold">Yasin Arafat Jan</h3>
+                        <p className="text-xs text-green-300 font-medium">CEO, Hackers Heaven • Sonadanga, Khulna</p>
+                      </div>
+                    </div>
+
+                    {/* Floating Experience Badge */}
+                    <div className="absolute -bottom-4 -right-3 bg-white border border-gray-100 px-3.5 py-2 rounded-xl shadow-xl z-20 flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-[#0d7a3a] text-white flex items-center justify-center font-black text-sm shadow-sm">
+                        10+
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-400 font-semibold leading-none">Years of</p>
+                        <p className="text-xs font-bold text-gray-900 leading-tight mt-0.5">Global Experience</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-
-              <div className="flex items-center gap-2.5">
-                <button
-                  onClick={handleShare}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-gray-50 border border-gray-200 text-gray-700 text-xs font-bold rounded-xl shadow-sm transition-all"
-                  title="Share Article"
-                >
-                  {copied ? <Check size={14} className="text-green-600" /> : <Share2 size={14} />}
-                  <span>{copied ? 'Link Copied!' : 'Share Article'}</span>
-                </button>
-              </div>
-
             </div>
-          </FadeIn>
+          </header>
+        ) : (
+          /* Standard Article Header & Full Width Landscape Cover */
+          <>
+            <header className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-12">
+              {/* Breadcrumbs */}
+              <FadeIn delay={0} y={15}>
+                <nav className="flex items-center gap-2 text-xs text-gray-500 font-semibold mb-6 flex-wrap">
+                  <a href="/" className="hover:text-[#0d7a3a] transition-colors">Home</a>
+                  <ChevronRight size={14} />
+                  <a href="/blog" className="hover:text-[#0d7a3a] transition-colors">Blog</a>
+                  <ChevronRight size={14} />
+                  <span className="text-gray-900 line-clamp-1">{post.category}</span>
+                </nav>
+              </FadeIn>
 
-        </header>
+              {/* Category Badge & Metadata */}
+              <FadeIn delay={0.1} y={15}>
+                <div className="flex items-center gap-3 text-xs sm:text-sm font-semibold text-gray-600 mb-4 flex-wrap">
+                  <span className="bg-[#0d7a3a] text-white px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
+                    {post.category}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Calendar size={14} className="text-gray-400" />
+                    {post.publishedDate}
+                  </span>
+                  <span>•</span>
+                  <span className="flex items-center gap-1">
+                    <Clock size={14} className="text-gray-400" />
+                    {post.readTime}
+                  </span>
+                </div>
+              </FadeIn>
 
-        {/* Featured Cover Image */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
-          <FadeIn delay={0.2} y={25}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/9] bg-gray-950">
-              <img
-                src={post.coverImage}
-                alt={post.title}
-                className="w-full h-full object-cover object-top"
-              />
+              {/* Article Title */}
+              <FadeIn delay={0.2} y={20}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-[1.15] mb-5">
+                  {post.title}
+                </h1>
+              </FadeIn>
+
+              {/* Subtitle */}
+              <FadeIn delay={0.3} y={20}>
+                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 font-normal">
+                  {post.subtitle}
+                </p>
+              </FadeIn>
+
+              {/* Author Bar & Share Button */}
+              <FadeIn delay={0.35} y={15}>
+                <div className="flex items-center justify-between py-4 border-y border-gray-200 gap-4 flex-wrap">
+                  <div className="flex items-center gap-3.5">
+                    <img
+                      src={post.author.avatar}
+                      alt={post.author.name}
+                      className="w-12 h-12 rounded-full object-cover border-2 border-[#0d7a3a]/30 shadow-sm"
+                    />
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900">{post.author.name}</h4>
+                      <p className="text-xs text-gray-500">{post.author.role}</p>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={handleShare}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-gray-50 border border-gray-200 text-gray-700 text-xs font-bold rounded-xl shadow-sm transition-all"
+                    title="Share Article"
+                  >
+                    {copied ? <Check size={14} className="text-green-600" /> : <Share2 size={14} />}
+                    <span>{copied ? 'Link Copied!' : 'Share Article'}</span>
+                  </button>
+                </div>
+              </FadeIn>
+            </header>
+
+            {/* Standard Featured Cover Image */}
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
+              <FadeIn delay={0.2} y={25}>
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white max-h-[460px] bg-gray-950">
+                  <img
+                    src={post.coverImage}
+                    alt={post.title}
+                    className="w-full h-full object-cover object-center max-h-[460px]"
+                  />
+                </div>
+              </FadeIn>
             </div>
-          </FadeIn>
-        </div>
+          </>
+        )}
 
         {/* Article Layout Grid (Content + Sidebar) */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
