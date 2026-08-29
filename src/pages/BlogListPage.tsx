@@ -12,7 +12,8 @@ const categories = [
   'Cybersecurity & Bio',
   'UGC Ads',
   'Real Estate Media',
-  'Video Editing'
+  'Video Editing',
+  'Digital Marketing'
 ];
 
 const BlogListPage = () => {

@@ -18,6 +18,8 @@ const getCategoryColor = (category: string) => {
       return 'bg-[#00875A] text-white';
     case 'Video Editing':
       return 'bg-blue-600 text-white';
+    case 'Digital Marketing':
+      return 'bg-orange-600 text-white';
     default:
       return 'bg-gray-800 text-white';
   }

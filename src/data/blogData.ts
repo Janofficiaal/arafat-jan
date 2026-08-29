@@ -21,7 +21,9 @@ export interface BlogPost {
   content: string;
 }
 
-export const blogPosts: BlogPost[] = [
+import { additionalBlogPosts } from './blogDataExtra';
+
+const coreBlogPosts: BlogPost[] = [
   {
     id: '1',
     slug: 'who-is-yasin-arafat-jan',
@@ -460,3 +462,5 @@ export const blogPosts: BlogPost[] = [
     `,
   },
 ];
+
+export const blogPosts: BlogPost[] = [...coreBlogPosts, ...additionalBlogPosts];
