@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import MainLandingPage from './pages/MainLandingPage';
 import RealEstatePage from './pages/RealEstatePage';
 import UgcAdsPage from './pages/UgcAdsPage';
@@ -44,6 +45,7 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
+      <Analytics />
     </BrowserRouter>
   );
 }
